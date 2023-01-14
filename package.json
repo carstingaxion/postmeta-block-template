@@ -1,21 +1,21 @@
 {
-	"name": "mkaz-block-template",
-	"version": "0.2.0",
-	"description": "A basic block template with RichText",
-	"author": "Marcus Kazmiercak",
-	"license": "GPL-2.0-or-later",
+	"name": "@carstenbach/postmeta-block-template",
+	"version": "0.1.0",
+	"description": "Spin up a dynamic block to show specific postmeta as server-side-rendered block, using this template for the WordPress/create-block package.",
+	"author": "Carsten Bach <mail@carsten-bach.de> (https://carsten-bach.de)",
+	"license": "GPL-3.0-or-later",
 	"keywords": [
 		"wordpress",
 		"create block",
 		"block template"
 	],
-	"homepage": "https://github.com/mkaz/mkaz-block-template",
+	"homepage": "https://github.com/carstingaxion/postmeta-block-template",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mkaz/mkaz-block-template.git"
+		"url": "https://github.com/carstingaxion/postmeta-block-template.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mkaz/mkaz-block-template/issues"
+		"url": "https://github.com/carstingaxion/postmeta-block-template/issues"
 	},
 	"publishConfig": {
 		"access": "public"
