@@ -1,13 +1,14 @@
 {
 	"name": "@carstenbach/postmeta-block-template",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Spin up a dynamic block to show specific postmeta as server-side-rendered block, using this template for the WordPress/create-block package.",
 	"author": "Carsten Bach <mail@carsten-bach.de> (https://carsten-bach.de)",
 	"license": "GPL-3.0-or-later",
 	"keywords": [
 		"wordpress",
 		"create block",
-		"block template"
+		"block template",
+		"scaffold"
 	],
 	"homepage": "https://github.com/carstingaxion/postmeta-block-template",
 	"repository": {
@@ -19,5 +20,8 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"dependencies": {
+		"@wordpress/create-block": "^4.8.0"
 	}
 }

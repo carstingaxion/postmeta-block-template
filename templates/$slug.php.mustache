@@ -40,10 +40,10 @@ use function wp_set_script_translations;
 add_action( 'init', function ()
 {
 	// load i18n & register block
-	add_action( 'init', '{{namespaceSnakeCase}}_{{slugSnakeCase}}__init' );
+	add_action( 'init', __NAMESPACE__ . '\\init' );
 
 	// register post_meta
-	add_action( 'init', '{{namespaceSnakeCase}}_{{slugSnakeCase}}__register_post_meta', 11 );
+	add_action( 'init', __NAMESPACE__ . '\\register_meta', 11 );
 
 }, 0 );
 
@@ -56,7 +56,7 @@ add_action( 'init', function ()
  *
  * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/writing-your-first-block-type/
  */
-function {{namespaceSnakeCase}}_{{slugSnakeCase}}__init() {
+function init() {
 
 	load_plugin_textdomain( 
 		'{{textdomain}}',
@@ -67,20 +67,20 @@ function {{namespaceSnakeCase}}_{{slugSnakeCase}}__init() {
 	register_block_type( 
 		__DIR__,
 		[
-			'render_callback' => '{{namespaceSnakeCase}}_{{slugSnakeCase}}__render',
+			'render_callback' => __NAMESPACE__ . '\\render',
 		]
 	);
 
 	// Load available translations.
 	wp_set_script_translations( 
-		'{{textdomain}}-editor-script',
+		'{{namespace}}-{{textdomain}}-editor-script',
 		'{{textdomain}}',
 		plugin_dir_path( __FILE__ ) . 'languages'
 	);
 }
 
 // register custom meta tag field
-function {{namespaceSnakeCase}}_{{slugSnakeCase}}__register_post_meta() {
+function register_meta() {
 
 	// prepare builtin post_types
 	add_post_type_support( 'post', 'POSTMETA' );
@@ -115,7 +115,7 @@ function {{namespaceSnakeCase}}_{{slugSnakeCase}}__register_post_meta() {
  *
  * @return string  Returns ....
  */
-function {{namespaceSnakeCase}}_{{slugSnakeCase}}__render( array $attributes, string $content, WP_Block $block ) : string {
+function render( array $attributes, string $content, WP_Block $block ) : string {
 	if ( ! isset( $block->context['postId'] ) )
 		return '';
 

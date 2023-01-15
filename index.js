@@ -10,7 +10,7 @@ module.exports = {
 		author: "Carsten Bach",
 		category: "text",
 		title: "A dynamic block using postmeta",
-		description: "A Gutenberg block to show specific postmeta as server-side-rendered block.",
+		description: "A Gutenberg block to show specific postmeta.",
 		dashicon: "hammer",
 		attributes: {
 			textAlign: {
@@ -49,9 +49,9 @@ module.exports = {
 			textdomain: "{{textdomain}}",
 		},
 		customScripts: {
-			"i18n:pot": "wp i18n make-pot . --exclude=node_modules",
+			"i18n:pot": "wp i18n make-pot . languages/{{textdomain}}.pot --exclude=node_modules",
 			"i18n:json": "wp i18n make-json languages --pretty-print --no-purge",
-			"i18n:mapjson": "wp i18n make-json languages --pretty-print --no-purge '--use-map={ \"src/index.js\": \"build/index.js\", \"src/save.js\": \"build/index.js\", \"src/edit/index.js\": \"build/index.js\", \"src/block.json\": \"build/block.json\" }'"
+			"i18n:mapjson": "wp i18n make-json languages --pretty-print --no-purge '--use-map={ \"src/index.js\": \"build/index.js\", \"src/save.js\": \"build/index.js\", \"src/edit/index.js\": \"build/index.js\" }'"
 		},
 		npmDependencies: [
 			"classnames",
